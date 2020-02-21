@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @task.content %>
+</p>
+
+<p>
+
+  <% if @task.completed %>
+  This task has been completed
+  <% else %>
+  This task is incomplete
+  <% end %>
+  
+</p>
+
+<p>
+  <strong>Due date:</strong>
+  <%= @task.due_date %>
+</p>
+
+<p>
+  This task belongs to <%= link_to @task.user.name, user_path(@task.user) %>
+</p>
+
+<p>
+  This task is part of the list <%= link_to @task.list.name, list_path(@task.list) %>
+</p>
+
+<% if !@task.completed %>
+  <%= button_to 'Completed?', task_path(@task), method: 'post' %>
+<% end %>
+
+<% if @list %>
+<%= link_to 'New Task', new_list_task_path(@list) %>
+
+<% elsif @user %>
+<%= link_to 'New Task', new_user_task_path(@user) %>
+<% else %>
+<%= link_to 'New Task', new_task_path %>
+<% end %>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

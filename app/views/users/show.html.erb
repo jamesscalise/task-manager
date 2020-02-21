@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  Name: <%= @user.name %>
+</p>
+
+
+<p>
+<% if @user.manager? %>
+  This user is a manager
+  <% else %>
+  This user is not a manager
+  <% end %>
+</p>
+<%= link_to 'View tasks for this user', user_tasks_path(@user) %>
+
+<% if @user.manager? %>
+<%= link_to 'Create a list', new_list_path %>
+<% end %>
+<%= link_to 'View Lists', lists_path %>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+<%= link_to 'Log out', logout_path %>

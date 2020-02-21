@@ -1,0 +1,45 @@
+<%= form_with(model: task, local: true) do |form| %>
+  <% if task.errors.any? %>
+    
+      <h2><%= pluralize(task.errors.count, "error") %></h2>
+
+      <ul>
+        <% task.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    
+  <% end %>
+
+  
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  
+
+  
+    <%= form.label :due_date %>
+    <%= form.date_select :due_date %>
+  
+
+  
+
+  
+
+    <% if !@user %>
+    <%= form.label :user_id %>
+    <%= form.collection_select :user_id, User.all, :id, :name %>
+    <% else %>
+    <%= form.hidden_field :user_id %>
+    <% end %>
+
+    <% if !@list %>
+    <%= form.label :list_id %>
+    <%= form.collection_select :list_id, List.all, :id, :name %>
+    <% else %>
+    <%= form.hidden_field :list_id %>
+    <% end %>
+
+  
+    <%= form.submit %>
+  
+<% end %>

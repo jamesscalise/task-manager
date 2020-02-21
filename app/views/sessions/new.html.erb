@@ -1,0 +1,7 @@
+<%= form_tag '/signin' do %>
+    <%= collection_select :user, :name, User.all, :name, :name %>
+    <%= text_field_tag 'password' %>
+    <%= submit_tag "Sign In" %>
+<%end%>
+
+<%= link_to('Log in with Facebook!', '/auth/facebook') %>

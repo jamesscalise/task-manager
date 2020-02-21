@@ -1,0 +1,22 @@
+<%= form_with(model: list, local: true) do |form| %>
+  <% if list.errors.any? %>
+  
+      <h2><%= pluralize(list.errors.count, "error") %>:</h2>
+
+      <ul>
+        <% list.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    
+  <% end %>
+
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

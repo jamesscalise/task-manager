@@ -1,0 +1,46 @@
+<% if @user %>
+<h1><%= @user.name %>'s Tasks</h1>
+<% elsif @list %>
+<h1><%= @list.name %> Tasks</h1>
+<% else %>
+<h1>Tasks</h1>
+<% end %>
+
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.content %></td><br/>
+        <td><%= "Due: #{task.due_date}" %></td><br/>
+        <% if task.completed %>
+        <td>This task has been completed </td><br/>
+        <% else %>
+        <td>This task is incomplete </td><br/>
+        <% end %>
+        <% if !@user %>
+        <td><%= link_to "Belongs to #{task.user.name}", user_path(task.user) %></br></td>
+        <% end %>
+        <% if !@list %>
+        <td><%= link_to "Part of #{task.list.name}", list_path(task.list) %></br></td>
+        <% end %>
+        <td><%= link_to 'Show', task %></td>
+        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></br></td>
+        </br>
+        </tr>
+    <% end %>
+  
+
+
+<br>
+
+
+<%= button_to 'View incomplete tasks',  tasks_incomplete_tasks_path, method: :post%>
+<%= button_to 'View next ten upcoming tasks', tasks_next_ten_due_path, method: :post%>
+
+<% if @list %>
+<%= link_to 'New Task', new_list_task_path(@list) %>
+
+<% elsif @user %>
+<%= link_to 'New Task', new_user_task_path(@user) %>
+<% else %>
+<%= link_to 'New Task', new_task_path %>
+<% end %>

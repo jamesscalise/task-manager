@@ -1,0 +1,33 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    
+    <h2><%= pluralize(user.errors.count, "error") %>:</h2>
+
+    <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    
+  <% end %>
+
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :password %>
+    <%= form.text_field :password %>
+  </p>
+
+  <p>
+    <%= form.label :manager %>
+    <%= form.check_box :manager %>
+  </p>
+
+  
+    <%= form.submit %>
+ 
+<% end %>
+

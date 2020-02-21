@@ -1,0 +1,26 @@
+
+
+<h1>Users</h1>
+
+
+  
+  
+    <% @users.each do |user| %>
+      <tr>
+        <p><td><%= user.name %></td></p>
+        <p>
+        <% if user.manager? %>
+          Manager
+          <% else %>
+          Non-Manager
+          <% end %>
+        </p>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+       
+      </tr>
+    <% end %>
+  
+
+
+    <%= link_to 'Log out', logout_path %>
