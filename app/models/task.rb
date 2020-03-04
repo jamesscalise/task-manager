@@ -11,4 +11,8 @@ class Task < ApplicationRecord
     def self.next_ten_due
         order('due_date ASC').limit(10)
     end
+    
+    def self.search(text)
+      where()
+    end
 end

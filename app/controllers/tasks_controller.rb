@@ -4,7 +4,11 @@ class TasksController < ApplicationController
   before_action :find_user, :find_list
   before_action :set_task, only: [:show, :edit, :update, :destroy, :complete]
   
-
+  def search
+    @tasks = Task.
+    render :index
+  end
+  
   def index
     if logged_in?
       if @user
