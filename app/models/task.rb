@@ -13,6 +13,6 @@ class Task < ApplicationRecord
     end
     
     def self.search(text)
-      where()
+      where("content LIKE ?", text)
     end
 end

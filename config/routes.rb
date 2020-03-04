@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :tasks
   end
   resources :tasks
+  post '/tasks/search', to: 'tasks#search'
   post '/tasks/next_ten_due', to: 'tasks#next_ten_due'
   post '/tasks/incomplete_tasks', to: 'tasks#incomplete_tasks'
   post '/tasks/:id' => 'tasks#complete'

@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy, :complete]
   
   def search
-    @tasks = Task.
+    @tasks = Task.search(params[:search])
     render :index
   end
   
