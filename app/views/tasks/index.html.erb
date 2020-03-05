@@ -1,5 +1,7 @@
-<%= form_tag('/tasks/search', method: :post) %>
-  <%= text_field_tag 'search', 'Search for tasks' %>
+<%= form_tag('/tasks/search') do%>
+  <%= label_tag 'search' %>
+  <%= text_field_tag 'search' %>
+  <%= submit_tag 'Search' %>
 <% end %>
 
 <% if @user %>
