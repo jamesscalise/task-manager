@@ -1,7 +1,21 @@
-This is an app where a user can sign in and see what tasks have been assigned to them. 
-If the user is a manager, they can create lists with associated tasks and assign them to users
-Tasks can be marked as complete by managers or the assigned user
-Users can view all tasks, tasks for specific lists, and tasks for specific users, as well as
-viewing the next ten due tasks and all incomplete tasks
+# Task Manager
 
-test change
+##Motivation
+
+This project was part of my time with the Flatiron Program, where I was tasked with utilizing Ruby on Rails to create an application with three different models in an MVC framework. I wanted to emulate something with real business value, so I made this app with a team project in mind.
+
+##Build Status
+
+##Code Style
+
+##Tech/Framework
+
+##Features
+
+##Installation
+
+##API Reference
+
+##How To Use
+
+##License
