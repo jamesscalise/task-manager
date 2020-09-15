@@ -14,4 +14,12 @@ After cloning the repository, simply run bundle install (presuming you have the 
 
 ##How To Use
 
+Accessing the live application [here](https://blooming-ridge-40522.herokuapp.com/)
+
+Create an account either utilizing the login screen or through OAuth with your Facebook account. You can select to be a manager, which gives you more options for accessing lists and tasks.
+
+As a manager, you are able to create lists, create and assign tasks, and check off tasks for any user. As a non-manager you are able to check out tasks that are assigned to you. Both types of users are able to view any list, user page, or task.
+
+When finished you have the option of logging out and signing back in later.
+
 ##License
